@@ -10,12 +10,15 @@ require('yargs')
         },
         baseUrl: argv.KINTONE_BASE_URL
       });
+      try {
       const result = await client.record.getRecord({
         app: argv.app,
         id: argv.id
       });
-
       console.log(result.record);
+    } catch (e) {
+      console.error(e);
+    }
     })
     .option('KINTONE_BASE_URL', {
       describe: 'Kintone url',
