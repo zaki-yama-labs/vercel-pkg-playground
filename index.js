@@ -1,5 +1,7 @@
 const { KintoneRestAPIClient } = require('@kintone/rest-api-client');
 
+// FIXME: It doesn't display an error when not passing any arguments.
+// Please pass `get-record` as a first argument.
 require('yargs')
   .command('get-record', 'get 1 record', () => {}, async (argv) => {
       console.log('argv', argv);
